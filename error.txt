@@ -1,0 +1,10 @@
+/tmp/main-0dd981.o: In function `main':
+main.cpp:(.text+0x43d): undefined reference to `Tour::addition(std::basic_fstream<char, std::char_traits<char> >&, int*, Tour*)'
+main.cpp:(.text+0x4ab): undefined reference to `Tour::show_all_entries(std::basic_fstream<char, std::char_traits<char> >&, int, Tour*)'
+main.cpp:(.text+0x519): undefined reference to `Tour::find_tour_by_name(std::basic_fstream<char, std::char_traits<char> >&, int, Tour*)'
+main.cpp:(.text+0x587): undefined reference to `Tour::find_tour_by_place(std::basic_fstream<char, std::char_traits<char> >&, int, Tour*)'
+main.cpp:(.text+0x5f5): undefined reference to `Tour::find_tour_by_date(std::basic_fstream<char, std::char_traits<char> >&, int, Tour*)'
+main.cpp:(.text+0x663): undefined reference to `Tour::find_tour_by_price(std::basic_fstream<char, std::char_traits<char> >&, int, Tour*)'
+main.cpp:(.text+0x6d2): undefined reference to `Tour::removal(std::basic_fstream<char, std::char_traits<char> >&, int*, Tour*)'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+exit status 1
