@@ -1,0 +1,66 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    fstream out("test.txt", ios::in);
+    if(!out) {
+        cout << "Файл не октрылся";
+        return 0;
+    }
+    // или
+    if(!out.is_open()) {
+        cout << "Файл не октрылся";
+        return 0;
+    }
+    string s;
+    getline(out, s);
+    cout << s << endl;
+    out.seekg(0, ios::beg);
+    getline(out, s, ' ');
+    cout << s << endl;
+
+    out.seekg(0, ios::beg);
+    while (!out.eof()) {
+//        getline(out, s);
+        out >> s;
+        cout << s << endl;
+    }
+
+    /*
+     * одновременный ввод-вывод
+    fstream out("test.txt", ios::in | ios::out);
+    if(!out) {
+        cout << "Файл не октрылся";
+        return 0;
+    }
+    // или
+    if(!out.is_open()) {
+        cout << "Файл не октрылся";
+        return 0;
+    }
+    char buf;
+    while(out.get(buf)) {
+        switch (buf) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+        case 'A':
+        case 'E':
+        case 'I':
+        case 'U':
+        case 'O':
+            cout << "Нашли гласную " << buf << " на позиции " << out.tellg() << ' ' << out.tellp() << endl;
+            out.seekg(-1, ios::cur);
+            out << '%';
+            out.seekg(out.tellg(), ios::beg);
+            break;
+        }
+    }
+    */
+    out.close();
+    return 0;
+}
